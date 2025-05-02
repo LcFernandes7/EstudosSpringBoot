@@ -2,6 +2,9 @@ package med.voll.api.medico;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MedicoRepository extends JpaRepository<Medico, Long> {
+import java.util.Optional;
 
+public interface MedicoRepository extends JpaRepository<Medico, Long> {
+    Optional<Medico> findByCrm(String crm);
+    Optional<Medico> findByEmail(String email);
 }
